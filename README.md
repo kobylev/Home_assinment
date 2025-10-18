@@ -129,6 +129,30 @@ After running the analysis:
 
 ---
 
+## Visualizations
+
+### Venn Diagram
+
+![Venn Diagram](venn_diagram.png)
+
+The Venn diagram illustrates the overlapping structure of the three groups. Each circle represents one group (A, B, or C), with numbers indicating how many points belong to each region. The central intersection (667 points, highlighted) represents the key constraint: approximately 1/3 of each group's points belong to all three groups simultaneously. This visualization clearly shows:
+- How points are distributed across exclusive and shared regions
+- The symmetry in the design (Groups A and C have equal exclusive points)
+- The significant overlap that creates mixture complexity
+
+### Distribution Histograms
+
+![Distribution Histograms](distributions.png)
+
+The three histograms show the empirical distributions of values for each group, with the MLE-estimated mean (μ̂) marked by a dashed vertical line. Key observations:
+- **Group A** (red): Lower mean, influenced by its exclusive region centered at μ=10
+- **Group B** (blue): Middle mean, most balanced due to larger exclusive region at μ=15
+- **Group C** (green): Higher mean and wider spread, influenced by its exclusive region at μ=20
+
+The overlapping membership causes each group's distribution to be a mixture of the underlying Gaussian components, demonstrating the GMM structure. The variance differences reflect how the overlapping regions create heterogeneity within each group.
+
+---
+
 ## Key Concepts
 
 ### Maximum Likelihood Estimation (MLE)
@@ -178,7 +202,7 @@ See [`report.md`](report.md) for:
 
 ## Author
 
-Computational Statistics Assignment - L11
+Koby Lev - Ai Dev Experts student
 
 ---
 
