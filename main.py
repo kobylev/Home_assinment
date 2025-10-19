@@ -47,7 +47,7 @@ def main():
     save_data(group_A, group_B, group_C, distribution)
 
     # Step 6: Create visualizations
-    create_venn_diagram(distribution)
+    create_venn_diagram(distribution, data=data)
     create_distribution_histograms(group_A, group_B, group_C, stats)
 
     # Final message

@@ -65,9 +65,9 @@ def print_statistics(distribution, stats):
     for group_name, stat in stats.items():
         print(f"\n{group_name}:")
         print(f"  Sample Size (n)    : {stat['n']}")
-        print(f"  Mean (μ̂)           : {stat['mean']:.4f}")
-        print(f"  Variance (σ̂²)      : {stat['variance']:.4f}")
-        print(f"  Std Deviation (σ̂)  : {stat['std']:.4f}")
+        print(f"  Mean (mu-hat)      : {stat['mean']:.4f}")
+        print(f"  Variance (sigma^2) : {stat['variance']:.4f}")
+        print(f"  Std Deviation (s)  : {stat['std']:.4f}")
 
 
 def verify_constraints(group_A, group_B, group_C, distribution):
@@ -83,9 +83,9 @@ def verify_constraints(group_A, group_B, group_C, distribution):
     print("\n" + "=" * 60)
     print("CONSTRAINT VERIFICATION")
     print("=" * 60)
-    print(f"Group A total: {len(group_A)} (expected: 2000) ✓" if len(group_A) == 2000 else f"Group A total: {len(group_A)} (expected: 2000) ✗")
-    print(f"Group B total: {len(group_B)} (expected: 2000) ✓" if len(group_B) == 2000 else f"Group B total: {len(group_B)} (expected: 2000) ✗")
-    print(f"Group C total: {len(group_C)} (expected: 2000) ✓" if len(group_C) == 2000 else f"Group C total: {len(group_C)} (expected: 2000) ✗")
+    print(f"Group A total: {len(group_A)} (expected: 2000) [OK]" if len(group_A) == 2000 else f"Group A total: {len(group_A)} (expected: 2000) [FAIL]")
+    print(f"Group B total: {len(group_B)} (expected: 2000) [OK]" if len(group_B) == 2000 else f"Group B total: {len(group_B)} (expected: 2000) [FAIL]")
+    print(f"Group C total: {len(group_C)} (expected: 2000) [OK]" if len(group_C) == 2000 else f"Group C total: {len(group_C)} (expected: 2000) [FAIL]")
     print(f"\nABC intersection: {distribution['ABC']} points")
     print(f"  Percentage of Group A: {distribution['ABC']/2000*100:.1f}%")
     print(f"  Percentage of Group B: {distribution['ABC']/2000*100:.1f}%")
@@ -102,7 +102,7 @@ def save_statistics(stats, filename='group_statistics.csv'):
     """
     stats_df = pd.DataFrame(stats).T
     stats_df.to_csv(filename)
-    print(f"\n✓ Statistics saved to '{filename}'")
+    print(f"\n[OK] Statistics saved to '{filename}'")
 
 
 def save_data(group_A, group_B, group_C, distribution, filename='group_data.npz'):
@@ -121,4 +121,4 @@ def save_data(group_A, group_B, group_C, distribution, filename='group_data.npz'
              group_B=group_B,
              group_C=group_C,
              distribution=distribution)
-    print(f"✓ Data saved to '{filename}'")
+    print(f"[OK] Data saved to '{filename}'")
