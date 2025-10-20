@@ -141,8 +141,9 @@ def create_dual_panel_visualization(data, labels, stats, overlap_info, filename=
                     label='Overlap Region Boundary', zorder=4)
             ax2.fill(hull_points[:, 0], hull_points[:, 1],
                     color='#FFFF00', alpha=0.2, zorder=2)
-        except:
-            pass  # Skip if convex hull fails
+        except (ValueError, RuntimeError) as e:
+            # Skip if convex hull fails (e.g., collinear points)
+            print(f"Warning: Could not compute convex hull: {e}")
 
     # Plot confidence ellipses (lighter)
     for group_idx, group_name in enumerate(['Group 1', 'Group 2', 'Group 3'], start=1):

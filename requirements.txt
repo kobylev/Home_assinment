@@ -1,0 +1,19 @@
+# Gaussian Overlap Dataset Generator
+# Required Python packages
+
+# Core numerical computing
+numpy>=1.19.0,<2.0.0
+
+# Scientific computing and statistics
+scipy>=1.5.0,<2.0.0
+
+# Visualization and plotting
+matplotlib>=3.3.0,<4.0.0
+
+# Optional: For better performance
+# numexpr>=2.8.0  # Fast numerical expression evaluator
+
+# Development dependencies (optional)
+# pytest>=7.0.0  # Testing framework
+# black>=22.0.0  # Code formatter
+# flake8>=4.0.0  # Linting
