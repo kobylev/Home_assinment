@@ -8,7 +8,9 @@
       "Bash(uv venv)",
       "Bash(uv pip install -r requirements.txt)",
       "Bash(uv run python -c \"import numpy; import scipy; import matplotlib; print(''All imports successful!'')\")",
-      "Bash(uv run python main.py 3000)"
+      "Bash(uv run python main.py 3000)",
+      "Bash(uv run python main.py 1000)",
+      "Bash(uv run python main.py 500)"
     ],
     "deny": [],
     "ask": []
